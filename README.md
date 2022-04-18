@@ -23,7 +23,7 @@ In the context of Data structures and Algorithms, sorting alorithms are the buil
 ## How to Use
 
 - You can select the sorting algorithm which you want to visualize from the navigation bar.
-- And press **"start simulation"** button.
+- And press **"Start Simulation"** button.
 - You can also see the **pseudo code** for each of the algorithm on the right side of the page along with time complexity.
 
 ## Preview 
