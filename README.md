@@ -29,7 +29,11 @@ In the context of Data structures and Algorithms, sorting alorithms are the buil
 ## Preview 
 You can view and try it out here - https://mitradatta.github.io/Sorting-Visualizer/
 
-![Video Preview](https://user-images.githubusercontent.com/54971204/163841954-e9b392ae-c57e-454e-af0a-ad14090fe486.mov)
+<p> Video</p>
+<video width="640" height="360" controls>
+  <source src="[https://example.com/my-video.mov](https://user-images.githubusercontent.com/54971204/163841954-e9b392ae-c57e-454e-af0a-ad14090fe486.mov)" type="video/quicktime">
+  Your browser does not support the video tag.
+</video>
 
 
 
