@@ -1,0 +1,217 @@
+<!DOCTYPE html> 
+
+<style> 
+ * {
+ 	margin:  0;
+ 	box-sizing: border-box;
+ }
+.a { 
+     display: flex;
+     justify-content: space-between;
+     border:  2px solid black;
+}
+
+.a * {
+    border-right:  2px solid black ; 
+    text-align: center;
+    padding:  10px;
+    margin:  0;
+}
+
+#parent > *  { 
+	margin-bottom:  5px;
+ }
+
+ .b {
+     font-size: 50px;
+     margin-bottom:  10px;
+     text-align: center;
+ 
+ }
+
+ .anime { 
+    animation: dothis  1s linear  forwards infinite;
+  }
+
+ @keyframes  dothis{ 
+
+       from { 
+        transform:  translateX(0px);
+        }
+        to { 
+        transform: translateX(900px);
+         }
+ }
+
+</style>
+
+  <script> 
+      let heights = [];
+  	   for(var i=0; i<20; i++) 
+  	   	{
+  	   		heights[i] = Math.floor(Math.random()*30) + 15;
+  	    }
+        
+  	   var c = 1; 
+  	   var count =0; 
+      	 function detailedcreate(a)
+      	 {
+      	             
+      	             setTimeout( function() { 
+      	             	console.log(i,"hi");
+           let new1 = document.createElement("div");
+           let arr = document.createElement("p");
+       
+            
+            var id = `a${++count}`;
+             var id1 = `b${count}`;
+            console.log(id);
+            // console.log(id);
+           new1.setAttribute("id",id);
+           arr.setAttribute("id",id1);
+           let string = "";
+        
+           for(var i=0; i<heights.length; i++)
+           { 
+               string+=`<p id="sub${i}" > ${a[i]} </p>`;     
+           }
+         
+               new1.insertAdjacentHTML("afterbegin",string);
+                  new1.classList.add("a");
+             new1.setAttribute("id",id);
+               document.getElementById("parent").appendChild(new1);
+           arr.setAttribute("id",id1);
+           
+            arr.innerHTML = "  &darr; "; 
+            arr.classList.add("b");
+         
+          
+           document.getElementById("parent").appendChild(arr);
+             
+              },c*100);
+            c+=1;
+
+         }
+
+
+         function detailedupdate(a,start,end)
+         {
+
+         	setTimeout( function() { 
+         	        
+         	      
+                   var id1 = `sub${start}`;
+                   var id2=`sub${end}`;
+                    // var id2 = `sub${start}`;
+                    var element1 = document.getElementById(id1);
+                    var element2 = document.getElementById(id2);
+                     // console.log(c2);
+                    
+                   element1.innerHTML = a[start];
+                   element2.innerHTML = a[end];
+                   // console.log(a);
+                 
+                    // c2.style.animation = "dothis  1s linear  forwards 1;"
+                    // for(var x=0; x<heights.length; x++)
+                    // {   
+                        
+                        
+                    // 	string+=`<p id="sub${j+1}" > ${a[x]} </p>`;
+                   
+                         
+                    // }
+
+
+
+                   
+                    
+                
+
+               
+                    //                     var id2 = `#a${i}:nth-child(${k+1})`;
+                    
+                
+
+              },c*100);
+              c+=1;        
+
+
+                          
+         }
+
+         function changecolor(start,end,color)
+         {
+
+                 setTimeout( function() { 
+                    
+                
+                 
+                 var id1 = `sub${start}`;
+                 var id2 =  `sub${end}`;
+                 var k1 = document.getElementById(id1);
+                 var k2 = document.getElementById(id2);
+                  k1.style.backgroundColor = color;
+                  k2.style.backgroundColor = color;
+             },c*100);
+                 c+=1;
+         }
+
+
+        
+function selectionsort()
+{
+ let x = [...heights];
+detailedcreate(x);
+for(let i=0; i<heights.length; i++)
+{
+  let min = heights[i],index=i; 
+  for(let j=i; j<heights.length; j++)
+  {
+  	 
+       if(heights[j]<min)
+       {
+
+           
+           min = heights[j]; 
+
+         
+           index = j;
+                     
+
+        }
+           
+        
+
+
+  }
+  var temp = heights[index];
+  heights[index] = heights[i];
+  heights[i] = temp; 
+   x = [...heights]; 
+  changecolor(i,index,"red");
+  detailedupdate(x,i,index); 
+  changecolor(index,index,"white");
+  changecolor(i,i,"pink");
+  
+
+}
+
+}
+
+         function hello(x)
+         {
+                 switch( x)
+                 { 
+                  case 1: selectionsort();
+                          break;
+              }
+         }
+
+</script>
+<body> 
+     <button onclick = "hello(1);"> click here </button>
+     <div id="parent">
+             <p> hello &rarr;</p>
+    </div>
+ </body>
+ </html>

@@ -1,0 +1,116 @@
+
+* {
+  
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+
+#content {
+  display: flex;
+  align-items: flex-start;
+   border:  2px solid black;
+   padding:  5px;
+   margin:  5px;
+    background-color:  #EBEBEB;
+    width:  50.5%;
+    float:  left;
+}
+#content * {
+   margin-right: 5px;
+   height:  200px;
+   background-color:  blue;
+   width: 25px;
+}
+
+#parent {
+  width:  100%;
+}
+
+.mitra  {
+background-color: red;
+}
+
+.header 
+{
+   text-align:  center;
+   font-size:  1.5em;
+   background-color:  #117686;
+   margin-bottom:  10px;
+   width:  100%;
+
+}
+
+.container-fluid {
+    padding:  0;
+    justify-items: center;
+}
+.header-buttons
+{
+    font-size: 0.7em;
+}
+.header-buttons:hover 
+{
+    background-color:  white;
+
+}
+#Algorithm-container
+{
+    width:  48%;
+    /*border:  2px solid black;*/
+    padding:  5px;
+    margin:  5px;
+    display:  inline-block; 
+}
+
+#Parent-container
+{
+    display:  flex;
+    flex-direction:  row;
+
+}
+
+.invisible {
+    display:  none;
+} 
+
+.fading {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+}
+
+.bucklein {
+    animation: buckleIn ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+  
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity:  0.8;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+@keyframes buckleIn{
+    0% {
+        opacity: 0;
+        visibility:  hidden;
+       font-size:  0.3em;
+    }
+
+    100% {
+        opacity: 1;
+        width:  100%;
+        visibility:  visible;
+        font-size: 1.8em;
+     }
+}
